@@ -21,8 +21,8 @@ public class TipController {
     }
 
     @PostMapping
-    public ResponseEntity<Tip> addTip(@RequestBody Tip tip) {
-        logger.info("Creating a new tip" + tip);
-        return ResponseEntity.ok(tipService.save(tip));
+    public ResponseEntity<FridayTip> addTip(@RequestBody FridayTip fridayTip) {
+        logger.info("Creating a new tip" + fridayTip);
+        return ResponseEntity.ok(tipService.save(fridayTip));
     }
 }
