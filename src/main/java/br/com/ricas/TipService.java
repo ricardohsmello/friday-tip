@@ -12,7 +12,7 @@ public class TipService {
         this.tipRepository = tipRepository;
     }
 
-    public Tip save(Tip tip) {
-        return tipRepository.save(tip);
+    public FridayTip save(FridayTip fridayTip) {
+        return tipRepository.save(fridayTip);
     }
 }
