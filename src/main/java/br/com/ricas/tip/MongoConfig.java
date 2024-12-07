@@ -1,4 +1,4 @@
-package br.com.ricas;
+package br.com.ricas.tip;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;

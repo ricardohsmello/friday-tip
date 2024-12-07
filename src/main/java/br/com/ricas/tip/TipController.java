@@ -1,4 +1,4 @@
-package br.com.ricas;
+package br.com.ricas.tip;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
