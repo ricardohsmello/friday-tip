@@ -26,3 +26,4 @@ public class TipController {
         return ResponseEntity.ok(tipService.save(fridayTip));
     }
 }
+
