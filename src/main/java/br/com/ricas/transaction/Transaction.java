@@ -17,4 +17,8 @@ public class Transaction {
     public String getId() {
         return id;
     }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
