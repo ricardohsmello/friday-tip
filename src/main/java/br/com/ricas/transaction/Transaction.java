@@ -21,4 +21,8 @@ public class Transaction {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
