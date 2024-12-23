@@ -10,5 +10,7 @@ public class Transaction {
     private String id;
     private String code;
 
-
+    public String getCode() {
+        return code;
+    }
 }
