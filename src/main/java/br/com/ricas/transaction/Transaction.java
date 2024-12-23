@@ -13,4 +13,8 @@ public class Transaction {
     public String getCode() {
         return code;
     }
+
+    public String getId() {
+        return id;
+    }
 }
