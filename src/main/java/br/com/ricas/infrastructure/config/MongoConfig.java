@@ -1,8 +1,6 @@
-package br.com.ricas.application;
+package br.com.ricas.infrastructure.config;
 
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.ReadPreference;
+import com.mongodb.*;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,9 +12,13 @@ public class MongoConfig {
 
     @Bean
     public MongoClient mongoClient() {
+
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString(connectionString))
                 .readPreference(ReadPreference.nearest())
+                .serverApi(ServerApi.builder()
+                        .version(ServerApiVersion.V1)
+                        .build())
                 .build();
 
         return MongoClients.create(settings);
