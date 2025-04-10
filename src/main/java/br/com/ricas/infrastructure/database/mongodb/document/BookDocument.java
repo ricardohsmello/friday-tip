@@ -4,45 +4,42 @@ import br.com.ricas.domain.model.Book;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document("books")
 public class BookDocument {
-
     @Id
     String id;
     String title;
     String author;
+    int pages;
+    int year;
+    List<String> genres;
+    String synopsis;
+    String cover;
 
-    public BookDocument(String id, String title, String author) {
+    public BookDocument(
+            String id,
+            String title,
+            String author,
+            int pages,
+            int year,
+            List<String> genres,
+            String synopsis,
+            String cover
+    ) {
         this.id = id;
         this.title = title;
         this.author = author;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+        this.pages = pages;
+        this.year = year;
+        this.genres = genres;
+        this.synopsis = synopsis;
+        this.cover = cover;
     }
 
     public Book toBook() {
-        return new Book(title, author);
+        return new Book(id, title, author, pages, year, genres, synopsis, cover);
     }
 }
+

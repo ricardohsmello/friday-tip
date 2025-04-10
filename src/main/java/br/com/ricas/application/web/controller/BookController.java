@@ -17,9 +17,8 @@ import java.util.stream.Collectors;
 public class BookController {
 
     private static final Logger LOGGER = Logger.getLogger(BookController.class.getName());
-
-
     private final BookService bookService;
+
     BookController(BookService bookService) {
         this.bookService = bookService;
     }
@@ -30,7 +29,18 @@ public class BookController {
         List<Book> list = bookService.findAll();
 
         List<BookResponse> response = list.stream()
-                .map(book -> new BookResponse(book.title(), book.author()))
+                .map(BookResponse::new)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<BookResponse>> fullTextSearch(@RequestParam String term) {
+        List<Book> list = bookService.fullTextSearch(term);
+
+        List<BookResponse> response = list.stream()
+                .map(BookResponse::new)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(response);
@@ -39,9 +49,24 @@ public class BookController {
     @PostMapping
     public ResponseEntity<BookResponse> create(@RequestBody BookRequest bookRequest) {
         LOGGER.info("Creating a new book" + bookRequest);
-        Book save = bookService.save(new Book(bookRequest.title(), bookRequest.author()));
-        return ResponseEntity.ok(new BookResponse(save.title(), save.author()));
+        Book save = bookService.save(
+                new Book(
+                        null,
+                        bookRequest.title(),
+                        bookRequest.author(),
+                        bookRequest.pages(),
+                        bookRequest.year(),
+                        bookRequest.genres(),
+                        bookRequest.synopsis(),
+                        bookRequest.cover()
+                )
+        );
+        return ResponseEntity.ok(new BookResponse(save));
+    }
+
+    @PostMapping("/groupByAuthorAndExport")
+    public ResponseEntity<String> groupBooksByAuthorAndExport() {
+        bookService.groupBooksByAuthorAndExport();
+        return ResponseEntity.ok("Function has been called successfully");
     }
 }
-
-
