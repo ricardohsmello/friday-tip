@@ -3,3 +3,8 @@ spring:
     mongodb:
       uri: ${MONGODB_URI}
       database: fridayTip
+  atlas:
+    search_index: ${ATLAS_SEARCH_INDEX}
+logging:
+  level:
+    org.springframework.data.mongodb: DEBUG
