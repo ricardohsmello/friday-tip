@@ -1,4 +1,6 @@
 package br.com.ricas.application.web.response;
 
-public record BookResponse(String title, String author) {
+import br.com.ricas.domain.model.Book;
+
+public record BookResponse(Book book) {
 }

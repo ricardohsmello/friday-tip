@@ -1,4 +1,14 @@
 package br.com.ricas.application.web.request;
 
-public record BookRequest(String title, String author) {
+import java.util.List;
+
+public record BookRequest(
+        String title,
+        String author,
+        int pages,
+        int year,
+        List<String> genres,
+        String synopsis,
+        String cover
+) {
 }
