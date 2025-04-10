@@ -1,4 +1,4 @@
-package br.com.ricas.infrastructure.document;
+package br.com.ricas.infrastructure.database.mongodb.document;
 
 import br.com.ricas.domain.model.Book;
 import org.springframework.data.annotation.Id;

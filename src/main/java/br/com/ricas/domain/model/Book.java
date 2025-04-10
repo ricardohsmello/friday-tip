@@ -1,6 +1,6 @@
 package br.com.ricas.domain.model;
 
-import br.com.ricas.infrastructure.document.BookDocument;
+import br.com.ricas.infrastructure.database.mongodb.document.BookDocument;
 
 public record Book(String title, String author) {
 
