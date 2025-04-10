@@ -1,0 +1,11 @@
+### Get request
+GET http://localhost:8080/books
+
+### Post request
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Mastering MongoDB with Spring",
+  "author": "Ricardo Mello"
+}
