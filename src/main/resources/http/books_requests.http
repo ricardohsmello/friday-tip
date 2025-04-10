@@ -1,0 +1,26 @@
+### Get request
+GET http://localhost:8080/books
+
+### Get request with a query parameter
+GET http://localhost:8080/books/search?term=scenes
+
+### Post request
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Beauty and the Beast Novelization",
+  "author": "Elizabeth Rudnick",
+  "pages": 140,
+  "year": 1999,
+  "genres": [
+    "Romance"
+  ],
+  "synopsis": "Maleficent during..",
+  "cover": "https://images.isbndb.com/covers/40/60/9780002554060.jpg"
+}
+
+### Post request to group books
+POST http://localhost:8080/books/groupByAuthorAndExport
+
+
