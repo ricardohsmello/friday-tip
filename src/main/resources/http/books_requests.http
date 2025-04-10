@@ -9,14 +9,14 @@ POST http://localhost:8080/books
 Content-Type: application/json
 
 {
-  "title": "Beauty and the Beast Novelization",
-  "author": "Elizabeth Rudnick",
-  "pages": 140,
-  "year": 1999,
+  "title": "Tricked (Fairy Tale Reform School Book 3)",
+  "author": "Jen Calonita",
+  "pages": 258,
+  "year": 2023,
   "genres": [
-    "Romance"
+    "Drama"
   ],
-  "synopsis": "Maleficent during..",
+  "synopsis": "Things are changing at Fairy Tale Reform School. At least, that's what Gilly's heard through the Enchantasia rumor mill.",
   "cover": "https://images.isbndb.com/covers/40/60/9780002554060.jpg"
 }
 

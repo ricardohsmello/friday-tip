@@ -86,14 +86,14 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void groupBooksByAuthorAndExport() {
         Aggregation aggregation = Aggregation.newAggregation(
-                Aggregation
-                        .group("author")
-                        .count().as("bookCount")
-                        .push("title").as("titles"),
-                Aggregation.merge().intoCollection("books_by_author").build(),
-
-                Aggregation.project("", "")
-        );
+                Aggregation.group("author")
+                        .count()
+                        .as("TotalBooks")
+                        .push("title")
+                        .as("titles"),
+                Aggregation.merge()
+                        .intoCollection("books_by_author")
+                        .build());
 
         mongoTemplate.aggregate(aggregation, "books", Document.class);
     }
