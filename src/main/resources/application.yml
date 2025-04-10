@@ -1,5 +1,5 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost/?directConnection=true
+      uri: ${MONGODB_URI}
       database: fridayTip
