@@ -1,5 +1,6 @@
 package br.com.ricas.application.web.request;
 
+import java.util.Date;
 import java.util.List;
 
 public record BookRequest(
@@ -9,6 +10,7 @@ public record BookRequest(
         int year,
         List<String> genres,
         String synopsis,
-        String cover
+        String cover,
+        Date publishedAt
 ) {
 }

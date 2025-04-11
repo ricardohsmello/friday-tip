@@ -58,7 +58,8 @@ public class BookController {
                         bookRequest.year(),
                         bookRequest.genres(),
                         bookRequest.synopsis(),
-                        bookRequest.cover()
+                        bookRequest.cover(),
+                        bookRequest.publishedAt()
                 )
         );
         return ResponseEntity.ok(new BookResponse(save));
@@ -67,6 +68,12 @@ public class BookController {
     @PostMapping("/groupByAuthorAndExport")
     public ResponseEntity<String> groupBooksByAuthorAndExport() {
         bookService.groupBooksByAuthorAndExport();
+        return ResponseEntity.ok("Function has been called successfully");
+    }
+
+    @PostMapping("/exportBooksWithPublishedYear")
+    public ResponseEntity<String> exportBooksWithPublishedYear() {
+        bookService.exportBooksWithPublishedYear();
         return ResponseEntity.ok("Function has been called successfully");
     }
 }

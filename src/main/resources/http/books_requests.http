@@ -9,18 +9,22 @@ POST http://localhost:8080/books
 Content-Type: application/json
 
 {
-  "title": "Tricked (Fairy Tale Reform School Book 3)",
-  "author": "Jen Calonita",
-  "pages": 258,
-  "year": 2023,
+  "title": "A Game of Thrones: A Song of Ice and Fire",
+  "author": "George R. R. Martin",
+  "pages": 982,
+  "year": 1996,
   "genres": [
     "Drama"
   ],
-  "synopsis": "Things are changing at Fairy Tale Reform School. At least, that's what Gilly's heard through the Enchantasia rumor mill.",
-  "cover": "https://images.isbndb.com/covers/40/60/9780002554060.jpg"
+  "synopsis": "Long ago, in a time forgotten, a preternatural event threw the seasons out of balance",
+  "cover": "https://images.isbndb.com/covers/40/60/9780002554060.jpg",
+  "publishedAt": "2023-04-10T00:00:00Z"
 }
 
 ### Post request to group books
 POST http://localhost:8080/books/groupByAuthorAndExport
+
+### Post request to export books with published year
+POST http://localhost:8080/books/exportBooksWithPublishedYear
 
 

@@ -10,4 +10,5 @@ public interface BookRepository {
     List<Book> findAll(PageRequest request);
     List<Book> fullTextSearch(String term);
     void groupBooksByAuthorAndExport();
+    void exportBooksWithPublishedYear();
 }

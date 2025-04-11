@@ -38,4 +38,8 @@ public class BookService {
     public void groupBooksByAuthorAndExport() {
         bookRepository.groupBooksByAuthorAndExport();
     }
+
+    public void exportBooksWithPublishedYear() {
+        bookRepository.exportBooksWithPublishedYear();
+    }
 }
