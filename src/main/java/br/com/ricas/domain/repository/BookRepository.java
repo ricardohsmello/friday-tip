@@ -8,7 +8,9 @@ import java.util.List;
 public interface BookRepository {
     Book save(Book book);
     List<Book> findAll(PageRequest request);
-    List<Book> fullTextSearch(String term);
+    List<Book> performAtlasSearchOptionA(String term);
+    List<Book> performAtlasSearchOptionB(String term);
+    List<Book> performAtlasSearchOptionC(String term);
     void groupBooksByAuthorAndExport();
     void exportBooksWithPublishedYear();
 }

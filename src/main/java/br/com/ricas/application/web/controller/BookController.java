@@ -36,9 +36,8 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<BookResponse>> fullTextSearch(@RequestParam String term) {
-        List<Book> list = bookService.fullTextSearch(term);
-
+    public ResponseEntity<List<BookResponse>> atlasSearch(@RequestParam String term) {
+        List<Book> list = bookService.performAtlasSearchOptionC(term);
         List<BookResponse> response = list.stream()
                 .map(BookResponse::new)
                 .collect(Collectors.toList());

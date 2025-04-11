@@ -31,8 +31,16 @@ public class BookService {
         return bookRepository.findAll(request);
     }
 
-    public List<Book> fullTextSearch(String therm) {
-        return bookRepository.fullTextSearch(therm);
+    public List<Book> performAtlasSearchOptionA(String therm) {
+        return bookRepository.performAtlasSearchOptionA(therm);
+    }
+
+    public List<Book> performAtlasSearchOptionB(String therm) {
+        return bookRepository.performAtlasSearchOptionB(therm);
+    }
+
+    public List<Book> performAtlasSearchOptionC(String therm) {
+        return bookRepository.performAtlasSearchOptionC(therm);
     }
 
     public void groupBooksByAuthorAndExport() {
