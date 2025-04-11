@@ -158,6 +158,24 @@ public class BookRepositoryImpl implements BookRepository {
 
         mongoTemplate.aggregate(aggregation, Book.BOOK_COLLECTION_NAME, Document.class);
 
+
+        /*        Document project = new Document("$project", new Document()
+                .append("title", 1)
+                .append("author", 1)
+        );
+
+        Document outStage = new Document("$out", new Document()
+                .append("db", "reports")
+                .append("coll", "new_collection")
+        );
+
+        MongoCollection<Document> collection = mongoTemplate
+                .getDb()
+                .getCollection("books");
+
+        collection.aggregate(List.of(project, outStage))
+                .toCollection();*/
+
     }
 
     private Book documentToBook(Document document) {
