@@ -2,23 +2,34 @@
 GET http://localhost:8080/books
 
 ### Get request with a query parameter
-GET http://localhost:8080/books/search?term=scenes
+GET http://localhost:8080/books/search?term=tOLKIEN
 
 ### Post request
 POST http://localhost:8080/books
 Content-Type: application/json
 
 {
-  "title": "A Game of Thrones: A Song of Ice and Fire",
-  "author": "George R. R. Martin",
+  "title": "Internazionale Road to Munchen",
+  "author": "Stam",
   "pages": 982,
-  "year": 1996,
+  "year": 2025,
   "genres": [
     "Drama"
   ],
-  "synopsis": "Long ago, in a time forgotten, a preternatural event threw the seasons out of balance",
-  "cover": "https://images.isbndb.com/covers/40/60/9780002554060.jpg",
-  "publishedAt": "2023-04-10T00:00:00Z"
+  "synopsis": "Leiyn Firebrand is no stranger to a fight. A brash ranger of the Titan Wilds..",
+  "cover": "https://m.media-amazon.com/images/I/91qynloe1gL._SY522_.jpg",
+  "publishedAt": "2020-04-10T00:00:00Z",
+  "reviews": [
+    {
+      "date": "2025-04-10T00:00:00Z",
+      "user": {
+          "id": "001",
+          "name": "Marcos"
+      },
+      "message": "I love this book!",
+      "stars": 5
+    }
+  ]
 }
 
 ### Post request to group books

@@ -14,6 +14,12 @@ public class ReviewDocument {
     private String message;
     private int stars;
 
+    public ReviewDocument(Date date, User user, String message, int stars) {
+        this.date = date;
+        this.user = user;
+        this.message = message;
+        this.stars = stars;
+    }
 
     public Review toReview() {
         return new Review(date, user, message, stars);

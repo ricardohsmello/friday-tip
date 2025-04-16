@@ -1,5 +1,7 @@
 package br.com.ricas.application.web.request;
 
+ import br.com.ricas.domain.model.Review;
+
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public record BookRequest(
         List<String> genres,
         String synopsis,
         String cover,
-        Date publishedAt
+        Date publishedAt,
+        List<Review> reviews
 ) {
 }

@@ -37,7 +37,7 @@ public class BookController {
 
     @GetMapping("/search")
     public ResponseEntity<List<BookResponse>> atlasSearch(@RequestParam String term) {
-        List<Book> list = bookService.performAtlasSearchOptionC(term);
+          List<Book> list = bookService.performAtlasSearchOptionA(term);
         List<BookResponse> response = list.stream()
                 .map(BookResponse::new)
                 .collect(Collectors.toList());
@@ -58,7 +58,8 @@ public class BookController {
                         bookRequest.genres(),
                         bookRequest.synopsis(),
                         bookRequest.cover(),
-                        bookRequest.publishedAt()
+                        bookRequest.publishedAt(),
+                        bookRequest.reviews()
                 )
         );
         return ResponseEntity.ok(new BookResponse(save));
