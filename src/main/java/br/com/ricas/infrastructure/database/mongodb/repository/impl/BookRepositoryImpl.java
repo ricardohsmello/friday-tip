@@ -1,8 +1,8 @@
-package br.com.ricas.infrastructure.database.mongodb.impl;
+package br.com.ricas.infrastructure.database.mongodb.repository.impl;
 
 import br.com.ricas.domain.model.Book;
 import br.com.ricas.domain.repository.BookRepository;
-import br.com.ricas.infrastructure.database.mongodb.BookMongoRepository;
+import br.com.ricas.infrastructure.database.mongodb.repository.BookMongoRepository;
 import br.com.ricas.infrastructure.database.mongodb.document.BookDocument;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoCollection;

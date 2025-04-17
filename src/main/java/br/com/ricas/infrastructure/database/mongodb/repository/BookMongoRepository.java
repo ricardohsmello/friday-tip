@@ -1,4 +1,4 @@
-package br.com.ricas.infrastructure.database.mongodb;
+package br.com.ricas.infrastructure.database.mongodb.repository;
 
 import br.com.ricas.infrastructure.database.mongodb.document.BookDocument;
 import org.springframework.data.mongodb.repository.MongoRepository;

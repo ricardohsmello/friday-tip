@@ -8,12 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static br.com.ricas.domain.util.Constants.DEFAULT_PAGE_NUMBER;
+import static br.com.ricas.domain.util.Constants.DEFAULT_PAGE_SIZE;
+
 @Service
 public class BookService {
-
-    public static final int DEFAULT_PAGE_NUMBER = 0;
-
-    public static final int DEFAULT_PAGE_SIZE = 10;
 
     private final BookRepository bookRepository;
 
