@@ -1,0 +1,27 @@
+### Get request
+GET http://localhost:8080/reviews
+
+### Post request
+POST http://localhost:8080/reviews
+Content-Type: application/json
+
+    {
+      "bookId": "1",
+      "date": "2025-04-10T00:00:00Z",
+      "user": {
+          "id": "001",
+          "name": "Marcos"
+      },
+      "message": "I love this book!",
+      "stars": 5
+    }
+
+
+
+### Post request to group books
+POST http://localhost:8080/books/groupByAuthorAndExport
+
+### Post request to export books with published year
+POST http://localhost:8080/books/exportBooksWithPublishedYear
+
+
