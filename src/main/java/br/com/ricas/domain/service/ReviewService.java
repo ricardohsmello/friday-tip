@@ -4,6 +4,7 @@ import br.com.ricas.domain.model.Book;
 import br.com.ricas.domain.model.Review;
 import br.com.ricas.domain.repository.ReviewRepository;
 import com.mongodb.client.result.UpdateResult;
+import org.bson.Document;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -34,11 +35,12 @@ public class ReviewService {
     public Review save(Review review) {
         Review saved = reviewRepository.save(review);
 
-        UpdateResult result = mongoTemplate.update(Book.class)
+        mongoTemplate.update(Book.class)
                 .matching(where("id").is(review.bookId()))
-                .apply(new Update().inc("accounts.$.balance", 50.00))
+                .apply(new Update().push("reviews", new Document("$each", List.of(review))
+                        .append("$sort", new Document("timestamp", -1))
+                        .append("$slice", 5)))
                 .first();
-
 
         return saved;
     }
