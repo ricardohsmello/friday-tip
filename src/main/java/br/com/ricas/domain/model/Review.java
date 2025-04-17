@@ -5,6 +5,7 @@ import br.com.ricas.infrastructure.database.mongodb.document.ReviewDocument;
 import java.util.Date;
 
 public record Review(
+        String bookId,
         Date date,
         User user,
         String message,
@@ -12,6 +13,6 @@ public record Review(
 ) {
 
     public ReviewDocument toDocument() {
-        return new ReviewDocument(date, user, message, stars);
+        return new ReviewDocument(bookId, date, user, message, stars);
     }
 }
