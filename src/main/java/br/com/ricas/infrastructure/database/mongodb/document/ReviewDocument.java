@@ -9,12 +9,14 @@ import java.util.Date;
 @Document("reviews")
 public class ReviewDocument {
 
-    private Date date;
-    private User user;
-    private String message;
-    private int stars;
+    private final String bookId;
+    private final Date date;
+    private final User user;
+    private final String message;
+    private final int stars;
 
-    public ReviewDocument(Date date, User user, String message, int stars) {
+    public ReviewDocument(String bookId, Date date, User user, String message, int stars) {
+        this.bookId = bookId;
         this.date = date;
         this.user = user;
         this.message = message;
@@ -22,6 +24,6 @@ public class ReviewDocument {
     }
 
     public Review toReview() {
-        return new Review(date, user, message, stars);
+        return new Review(bookId, date, user, message, stars);
     }
 }
