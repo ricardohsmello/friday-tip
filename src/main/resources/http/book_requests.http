@@ -2,16 +2,19 @@
 GET http://localhost:8080/books
 
 ### Get request with a query parameter
-GET http://localhost:8080/books/search?term=tOLKIEN
+GET http://localhost:8080/books/search?term=Linkin
+
+### Insert Vector data
+POST http://localhost:8080/books/insertData
 
 ### Post request
 POST http://localhost:8080/books
 Content-Type: application/json
 
 {
-  "title": "Internazionale Road to Munchen",
-  "author": "Stam",
-  "pages": 982,
+  "title": "Implementing spring ai with mongodb",
+  "author": "Ricardo Mello",
+  "pages": 1,
   "year": 2025,
   "genres": [
     "Drama"
@@ -28,6 +31,15 @@ Content-Type: application/json
       },
       "message": "I love this book!",
       "stars": 5
+    },
+    {
+      "date": "2025-04-22T00:00:00Z",
+      "user": {
+        "id": "002",
+        "name": "Pedro"
+      },
+      "message": "A book that took my attention ..",
+      "stars": 4
     }
   ]
 }

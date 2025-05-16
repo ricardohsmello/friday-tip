@@ -3,8 +3,23 @@ spring:
     mongodb:
       uri: ${MONGODB_URI}
       database: fridayTip
+  ai:
+    openai:
+      api-key: ${OPENAI_KEY}
+      embedding:
+        options:
+          model: ${OPENAI_MODEL}
+    vectorstore:
+      mongodb:
+        initialize-schema: true
+        collection-name: books
+        index-name: vector_index
+        path-name:  embedding
+        metadata-fields-to-filter: author,title
   atlas:
     search_index: ${ATLAS_SEARCH_INDEX}
 logging:
   level:
     org.springframework.data.mongodb: DEBUG
+
+

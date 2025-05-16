@@ -4,10 +4,13 @@ import br.com.ricas.application.web.request.BookRequest;
 import br.com.ricas.application.web.response.BookResponse;
 import br.com.ricas.domain.model.Book;
 import br.com.ricas.domain.service.BookService;
+import org.springframework.ai.document.Document;
+import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -18,9 +21,11 @@ public class BookController {
 
     private static final Logger LOGGER = Logger.getLogger(BookController.class.getName());
     private final BookService bookService;
+    private final VectorStore vectorStore;
 
-    BookController(BookService bookService) {
+    BookController(BookService bookService, VectorStore vectorStore) {
         this.bookService = bookService;
+        this.vectorStore = vectorStore;
     }
 
     @GetMapping
@@ -74,6 +79,18 @@ public class BookController {
     @PostMapping("/exportBooksWithPublishedYear")
     public ResponseEntity<String> exportBooksWithPublishedYear() {
         bookService.exportBooksWithPublishedYear();
+        return ResponseEntity.ok("Function has been called successfully");
+    }
+
+    @PostMapping("/insertData")
+    public ResponseEntity<String> insertData() {
+        List<Document> documents = List.of(
+                new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("meta1", "meta1")),
+                new Document("The World is Big and Salvation Lurks Around the Corner"),
+                new Document("You walk forward facing the past and you turn back toward the future.", Map.of("meta2", "meta2")));
+
+        vectorStore.add(documents);
+
         return ResponseEntity.ok("Function has been called successfully");
     }
 }
