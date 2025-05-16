@@ -91,6 +91,8 @@ public class BookController {
 
         vectorStore.add(documents);
 
+        //List<Document> results = vectorStore.similaritySearch(SearchRequest.builder().query("Spring").topK(5).build());
+
         return ResponseEntity.ok("Function has been called successfully");
     }
 }
