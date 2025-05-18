@@ -90,9 +90,7 @@ public class BookController {
                 new Document("You walk forward facing the past and you turn back toward the future.", Map.of("meta2", "meta2")));
 
         vectorStore.add(documents);
-
         //List<Document> results = vectorStore.similaritySearch(SearchRequest.builder().query("Spring").topK(5).build());
-
         return ResponseEntity.ok("Function has been called successfully");
     }
 }
